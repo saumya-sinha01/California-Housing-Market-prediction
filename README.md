@@ -15,6 +15,6 @@ Since mortgage rate was  changing in a month so  took average and grouped them a
 Combined both datasets using LEFT JOIN on “Month” and “Year”.
 
 Models: 
-Days on Market(Quality Taregt feature) :Logistic Regression, Random Forest(with and without regularisation), Decision Tree(with and without regularisation), Naive Bayes(Multinomial and Gaussian), KNN
+Days on Market(Quality Taregt feature) :Multinominal Logistic Regression, Random Forest(with and without regularisation), Decision Tree(with and without regularisation), Naive Bayes(Multinomial and Gaussian), KNN
 Median Sale Price( Target feature): Random Forest, Linear Regression, Decision Tree
 Evaluation: F1 Score, Accuracy, KFold cross validation, Precision, Recall
