@@ -1,20 +1,44 @@
-# California-Housing-Market-prediction
-In this project, we will be building machine learning models to predict how often a house is successfully sold out after it’s been listed and also predict the median sales price of the house.
-We will be taking mortgage rate into account for the predictions.
-Following an increase in mortgage rates, demand for buying a house decreases and inversely the amount being sold increases, which also leads to a drop in housing price. Our goal is to find out if this holds true.
-Data Source:  Redfin/Kaggle, FRED Economic Data  .
-California home prices data are taken from the Redfin data center by web scraping. Scrapping of data is done from redin website and filtered data only for California state. It includes California home prices in every county from 2012-2022
-Mortgage data is taken from fred.stlouisfed.org. It contains the average 30-year fixed mortgage rate across the United States from 1970-2022. But we have used only from year 2012 - 2022
+# Predicting House Sales Success and Median Sales Price
 
-Expected Output: Quality Level (High=0, Medium=1, Low=2) and Median sales price
+This project focuses on building machine learning models to predict two key outcomes in the real estate market: the likelihood of a house being successfully sold after listing, and the median sales price of the property. We specifically account for mortgage rates in our predictions, as higher mortgage rates typically reduce the demand for purchasing homes, which paradoxically can increase the number of homes sold and lead to a decline in housing prices. Our objective is to verify whether this relationship holds true.
 
-Steps for merging the datasets:
-Converted  time series data to pandas.Timestamp in both the datasets
-Extracted “Month’ and “Date” from Timestamp and made “Month” and “Date” columns in both datasets.
-Since mortgage rate was  changing in a month so  took average and grouped them according to month and year
-Combined both datasets using LEFT JOIN on “Month” and “Year”.
+## Data Sources
 
-Models: 
-Days on Market(Quality Taregt feature) :Multinominal Logistic Regression, Random Forest(with and without regularisation), Decision Tree(with and without regularisation), Naive Bayes(Multinomial and Gaussian), KNN
-Median Sale Price( Target feature): Random Forest, Linear Regression, Decision Tree
-Evaluation: F1 Score, Accuracy, KFold cross validation, Precision, Recall
+- **Housing Data**: California home prices were obtained from Redfin through web scraping. The dataset covers home prices in every county across California from 2012 to 2022.
+- **Mortgage Data**: Mortgage rate data was sourced from the FRED Economic Data (fred.stlouisfed.org), providing the average 30-year fixed mortgage rates in the United States from 1970 to 2022. For this analysis, we focused on data from 2012 to 2022.
+
+## Expected Outcomes
+
+- **Quality Level of Sales**: Classified as High (0), Medium (1), Low (2)
+- **Median Sales Price**
+
+## Data Merging Process
+
+1. Converted time series data in both datasets to `pandas.Timestamp`.
+2. Extracted “Month” and “Year” from the timestamp and created corresponding columns in each dataset.
+3. Since mortgage rates vary within a month, we calculated the monthly average and grouped the data by month and year.
+4. Merged both datasets using a LEFT JOIN based on “Month” and “Year”.
+
+## Models Employed
+
+### For Days on Market (Quality Target Feature):
+
+- Multinomial Logistic Regression
+- Random Forest (with and without regularization)
+- Decision Tree (with and without regularization)
+- Naive Bayes (Multinomial and Gaussian)
+- K-Nearest Neighbors (KNN)
+
+### For Median Sale Price (Target Feature):
+
+- Random Forest
+- Linear Regression
+- Decision Tree
+
+## Evaluation Metrics
+
+- F1 Score
+- Accuracy
+- K-Fold Cross Validation
+- Precision
+- Recall
